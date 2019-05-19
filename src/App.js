@@ -40,50 +40,12 @@ class App extends React.Component {
         city: 'Porto'
       }
     ],
-    zomato: [],
-    isLoaded: false
   }
 
-  // TODO: Fetch restaurants from an API that has images
-  componentDidMount() {
-    const url = 'https://developers.zomato.com/api/v2.1/search?cuisines=vegan';
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('user-key', 'c4c1eb418c1e4c3ce614b01a8dac7d81');
-
-    let options = {
-      method: 'GET',
-      headers: headers
-    };
-
-    fetch(url, options)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          zomato: json.restaurants,
-        });
-      })
-  }
 
   render() {
-    let { isLoaded, cities, restaurants } = this.state;
+    let { cities, restaurants } = this.state;
 
-    if (!isLoaded) {
-      return (
-        <div className="App">
-          <Header />
-          <div className="section is-vcentered is-medium">
-            <div className="container">
-              <div className="columns is-centered">
-                <div className="column is-half"><progress className="progress is-large" max="100">15%</progress></div>
-              </div>
-            </div>
-          </div>
-          <Footer />
-        </div>
-      );
-    } else {
       return (
         <div className="App">
           <Header />
@@ -91,7 +53,6 @@ class App extends React.Component {
           <Footer />
         </div>
       );
-    }
   }
 }
 
