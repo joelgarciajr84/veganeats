@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
-import Search from './components/search/search.component';
-import Footer from './components/footer.component';
-import Header from './components/header.component';
+import "./css/index.css"
+import Search from './components/SearchBox';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 class App extends React.Component {
   state = {

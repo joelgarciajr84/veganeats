@@ -1,7 +1,7 @@
-import React from 'react';
-import SearchResults from './searchResults.component';
+import React, {PureComponent} from 'react';
+import SearchResults from '../SearchResults';
 
-class SearchComponent extends React.Component {
+class SearchBox extends PureComponent {
   searchLocation = React.createRef();
   
   state = {
@@ -40,4 +40,4 @@ class SearchComponent extends React.Component {
   }
 }
 
-export default SearchComponent;
+export default SearchBox;
